@@ -13,7 +13,7 @@ for chat in channels:
 
     with TelegramClient(name, api_id, api_hash) as client:
         for message in client.iter_messages(chat):
-            data.append([message.sender_id, message.text])
+            data.append([message.sender_id, message.text, message.id])
 
 
     df = pd.DataFrame(data, columns=['SENDER', 'MESSAGE']) # creates a new dataframe
